@@ -8,7 +8,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
+
+require('./Model/plant');
+
+
 mongoose.connect('mongodb://localhost:27017/web_project',{useUnifiedTopology:true}, {useNewUrlParser:true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -17,7 +21,7 @@ db.once('open', function(){
 });
 
 
-var plant_controller = require('./Controller/plant_controller.js');
+var plant_controller = require('./Controller/plant_controller');
 app.get('/',  function(req, res){
     res.render('index.ejs');
 })

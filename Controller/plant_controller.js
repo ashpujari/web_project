@@ -8,6 +8,26 @@ module.exports = {
         });
     },
 
+    GetById: function(req, res){
+        onsole.log('List by plant Id');
+        const {pid} = req.query;
+        plant.find({'plant_id' : {pid}}, function(err, results){
+            if(err){
+                throw err;
+            }
+        });
+    },
+
+    GetByName: function(req, res){
+        console.log('List by plant name');
+        const {name} = req.query;
+        plant.find({'plant_name' : {name}}, function(err, results){
+            if(err){
+                throw err;
+            }
+        });
+    },
+
     Create: function(res, req){
         console.log("Adding the plant ");
         var plantInfo={
@@ -28,13 +48,7 @@ module.exports = {
             if(err){
                 throw err;
             }
-            res.redirect("/plants");
-        });
-
-        
+            res.redirect("/");
+        });  
     }
-
-    
-
-
 }
