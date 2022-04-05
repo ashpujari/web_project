@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>List all of the plants</h2>
+        <section data-position='plants'>
+            <% for ( var i=0; i<alltheemployees.length; i++) { %>
+                <%= alltheemployees[i].emp_id %> &nbsp;
+                <%= alltheemployees[i].first_name %> &nbsp;
+                <%= alltheemployees[i].last_name %> &nbsp;
+                <%= alltheemployees[i].salary %> &nbsp;
+                <%= alltheemployees[i].emp_department %> &nbsp;
+                <%= alltheemployees[i].email_address %> &nbsp; <br >
+                <% } %>
+        </section>
+        <input type="button">
+    </body>
+</html>
