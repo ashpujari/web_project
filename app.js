@@ -22,12 +22,12 @@ db.once('open', function(){
 
 
 var plant_controller = require('./Controller/plant_controller');
-app.get('/',  function(req, res){
-    res.render('index.ejs');
-})
+
+app.get('/', plant_controller.getall);
+app.post('/plant/add', plant_controller.Create);
 app.get('/add', function(req, res){
-    res.render('add_plant.ejs');
-})
+    res.render('addplant.ejs');
+});
 
 var server = app.listen(8080, function() {
 	var port = server.address().port

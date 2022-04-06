@@ -5,11 +5,12 @@ module.exports = {
         console.log('print all plants');
         plant.find({}, function(err, results){
             if(err) throw err;
+            res.render('index.ejs', {alltheresults:results});
         });
     },
 
     GetById: function(req, res){
-        onsole.log('List by plant Id');
+        console.log('List by plant Id');
         const {pid} = req.query;
         plant.find({'plant_id' : {pid}}, function(err, results){
             if(err){
@@ -32,6 +33,7 @@ module.exports = {
         console.log("Adding the plant ");
         var plantInfo={
             "plant_id" : req.body.plant_id,
+            "plant_name" : req.body.plant_name,
             "description" : req.body.description,
             "environment" : req.body.environment,
             "water" : req.body.water,

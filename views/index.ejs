@@ -4,8 +4,26 @@
     <body>
         <h2>List all of the plants</h2>
         <section data-position='plants'>
+            <% for ( var i=0; i < alltheresults.length; i++) { %>
+                <%= alltheresults[i].plant_id %> &nbsp;
+                <%= alltheresults[i].plant_name %> &nbsp;
+                <%= alltheresults[i].description %> &nbsp;
+                <%= alltheresults[i].care_level %> &nbsp;
+                <%= alltheresults[i].environment %> &nbsp;
+                <%= alltheresults[i].water %> &nbsp;
+                <%= alltheresults[i].light %> &nbsp;
+                <%= alltheresults[i].plant_size %> &nbsp;
+                <%= alltheresults[i].price %> &nbsp;
+                <%= alltheresults[i].plant_type %> &nbsp;
+                <%= alltheresults[i].edible %> &nbsp;
+                <%= alltheresults[i].fruit_bearing %> &nbsp;
+                <%= alltheresults[i].quantity %> &nbsp;<br>
+            <% } %>
             
         </section>
-        <input type="button" value="Add plant"/>
+        <a href="/add">
+            <input type="button" value="Add plant"/>
+        </a>
+        
     </body>
 </html>
